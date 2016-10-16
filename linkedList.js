@@ -10,17 +10,26 @@ var LinkedList = function () {
 
 LinkedList.prototype.addNode = function (content) {
 	var nodeToAdd = new Node(content); 
+	var currentNode = this.head;
 	// if there is no first node, add a first node and kill the function
 	if (!this.head) {
 		this.head = nodeToAdd;
+		this.tail = nodeToAdd;
 		return;
 	}
 	
-	var currentNode = this.head; 
+	if(!currentNode){
+		currentNode = nodeToAdd;
+		// this.length++;
+		this.head = currentNode;
+	}
+
+		
 	while(currentNode.next) {
 		currentNode = currentNode.next;
-		currentNode.next = nodeToAdd;
 	}
+	currentNode.next = nodeToAdd;
+	this.tail = nodeToAdd;
 	return nodeToAdd;
 }
 
@@ -28,9 +37,9 @@ LinkedList.prototype.addNode = function (content) {
 var ll = new LinkedList();
 
 
-ll.addNode("Vikash") 
+ll.addNode("Vikash"); 
+ll.addNode("Marcel"); 
+ll.addNode("Newey"); 
 console.log(ll) //-> {value: "vikash", next: null} 
-
-
-
-
+console.log("hi")
+console.log(ll)
