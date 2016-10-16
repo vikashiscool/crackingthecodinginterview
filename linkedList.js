@@ -30,3 +30,7 @@ var ll = new LinkedList();
 
 ll.addNode("Vikash") 
 console.log(ll) //-> {value: "vikash", next: null} 
+
+
+
+
